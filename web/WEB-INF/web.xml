@@ -12,6 +12,14 @@
         <servlet-name>Add</servlet-name>
         <servlet-class>Servlets.Add</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Delete</servlet-name>
+        <servlet-class>Servlets.Delete</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update</servlet-name>
+        <servlet-class>Servlets.Update</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlets</servlet-name>
         <url-pattern>/DispatcherServlets</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>Add</servlet-name>
         <url-pattern>/Add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update</servlet-name>
+        <url-pattern>/Update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
