@@ -75,6 +75,7 @@
         <form action="Searche" method="post">
             ФИО: <input type="text" name = "fioSearche"/><br/> 
             Устройство: <select name="devaiceSearche">
+                            <option></option>
                             <option>Ноутбук</option>
                             <option>Монитор</option>
                             <option>Компьютер</option>

@@ -3,6 +3,7 @@ package Servlets;
 import com.mysql.jdbc.PreparedStatement;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -21,6 +22,7 @@ public class Searche extends DispatcherServlets {
     Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;  
+    String query;
 
 
     @Override
@@ -40,9 +42,26 @@ public class Searche extends DispatcherServlets {
         try {
          
             con = DriverManager.getConnection("jdbc:mysql://localhost/itr","root","Nbveh13");
-            pst = (PreparedStatement) con.prepareStatement("SELECT fio, devaice, id, SN, stats, date, period FROM resurces "
-                    + "WHERE fio = ? ");
+            
+            if(request.getParameter("fioSearche").equals("")) {
+            query = "SELECT fio, devaice, id, SN, stats, date, period FROM resurces "
+                    + "WHERE devaice = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setString(1,request.getParameter("devaiceSearche"));
+            } 
+            else if(request.getParameter("devaiceSearche").equals("")) {
+            query = "SELECT fio, devaice, id, SN, stats, date, period FROM resurces "
+                    + "WHERE fio = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
             pst.setString(1,request.getParameter("fioSearche"));
+            }       
+            else if((request.getParameter("devaiceSearche")!=null) && (!request.getParameter("fioSearche").equals(""))) {
+            query = "SELECT fio, devaice, id, SN, stats, date, period FROM resurces "
+                    + "WHERE fio = ? AND devaice = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);        
+            pst.setString(1,request.getParameter("fioSearche"));
+            pst.setString(2,request.getParameter("devaiceSearche"));
+            }
             rs = pst.executeQuery();
             
             List<Item> itemList = new ArrayList<Item>();
