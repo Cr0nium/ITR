@@ -18,7 +18,6 @@
                     <th></th>
                     <th></th>
                     <th></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -28,7 +27,69 @@
                     <td>Об устройстве:</td>
                     <td rowspan="2"><textarea name="stats" rows="4" cols="20">
                         </textarea></td>
-                        <td rowspan="5"><sql:query var="resurces" dataSource="jdbc/ITR">
+                        
+                </tr>
+                <tr>
+                    <td>Устройство:</td>
+                    <td><select name="devaice">
+                            <option>Ноутбук</option>
+                            <option>Монитор</option>
+                            <option>Компьютер</option>
+                            <option>Процессор</option>
+                            <option>Мат.Плата</option>
+                            <option>Оперативная память</option>
+                            <option>Жесткий диск</option>
+                            <option>Мышка</option>
+                            <option>Клавиатура</option>
+                            <option>Иное</option>
+                        </select></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr>
+                    <td>Id:</td>
+                    <td><input type="text" name = "id"/></td>
+                    <td>Дата выдачи:</td>
+                    <td><input type="date" name = "date"/></td>
+                    
+                </tr>
+                <tr>
+                    <td>Серийный номер:</td>
+                    <td><input type="text" name = "SN"/></td>
+                    <td>На срок(дней):</td>
+                    <td><input type="text" name = "period"/></td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="submit" name="Add" value="add"/></td>
+                    <td><input type="submit" name="Update" value="update"/></td>
+                    <td><input type="submit" name="Delete" value="delete"/></td>
+                    <td></td>
+                    
+                </tr>
+            </tbody>
+          </table>
+        </form>    
+            
+        <form action="Searche" method="post">
+            ФИО: <input type="text" name = "fioSearche"/><br/> 
+            Устройство: <select name="devaiceSearche">
+                            <option>Ноутбук</option>
+                            <option>Монитор</option>
+                            <option>Компьютер</option>
+                            <option>Процессор</option>
+                            <option>Мат.Плата</option>
+                            <option>Оперативная память</option>
+                            <option>Жесткий диск</option>
+                            <option>Мышка</option>
+                            <option>Клавиатура</option>
+                            <option>Иное</option>
+                        </select><br/>
+            <input type="submit" name="Searche" value="searche"/>            
+        </form>
+        
+            <sql:query var="resurces" dataSource="jdbc/ITR">
                 SELECT * FROM resurces
             </sql:query>
                 
@@ -47,49 +108,7 @@
                     </c:forEach>
                     </tr>
                 </c:forEach>
-            </table></td>
-                </tr>
-                <tr>
-                    <td>Устройство:</td>
-                    <td><select name="devaice">
-                            <option>Ноутбук</option>
-                            <option>Монитор</option>
-                            <option>Компьютер</option>
-                            <option>Процессор</option>
-                            <option>Мат.Плата</option>
-                            <option>Оперативная память</option>
-                            <option>Жесткий диск</option>
-                            <option>Мышка</option>
-                            <option>Клавиатура</option>
-                            <option>Иное</option>
-                        </select></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Id:</td>
-                    <td><input type="text" name = "id"/></td>
-                    <td>Дата выдачи:</td>
-                    <td><input type="date" name = "date"/></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Серийный номер:</td>
-                    <td><input type="text" name = "SN"/></td>
-                    <td>На срок(дней):</td>
-                    <td><input type="text" name = "period"/></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="Add" value="add"/></td>
-                    <td><input type="submit" name="Update" value="update"/></td>
-                    <td><input type="submit" name="Delete" value="delete"/></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-      </form>
+            </table>
+      
     </body>
 </html>
