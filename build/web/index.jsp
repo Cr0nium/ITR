@@ -8,7 +8,7 @@
         <title>Авторизация</title>
     </head>
     <body>
-        <form action="main.jsp" method="post">
+        <form action="LoginServlet" method="post">
             Login: <input type="text" name = "login"/>
             Password: <input type="password" name = "password"/>
             <input type="submit" name="enter" value="enter"/>
