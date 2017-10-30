@@ -8,6 +8,26 @@
         <filter-name>AuthFilter</filter-name>
         <url-pattern>/main.jsp</url-pattern>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/Searche</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/StartServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/Add</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/Update</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/Delete</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>DispatcherServlets</servlet-name>
         <servlet-class>Servlets.DispatcherServlets</servlet-class>
@@ -40,6 +60,10 @@
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>Servlets.LogoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>Servlets.Register</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlets</servlet-name>
         <url-pattern>/DispatcherServlets</url-pattern>
@@ -71,6 +95,10 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/Register</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

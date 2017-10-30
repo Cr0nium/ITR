@@ -110,6 +110,8 @@
                     </tr>
                 </c:forEach>
             </table>
-      
+      <form action="LogoutServlet" method="get">
+          <input type="submit" name="LogOut" value="logOut"/>
+      </form>
     </body>
 </html>

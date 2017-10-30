@@ -12,6 +12,8 @@
             Login: <input type="text" name = "login"/>
             Password: <input type="password" name = "password"/>
             <input type="submit" name="enter" value="enter"/>
+        </form>
+        <form action="register.jsp" method="post">
             <input type="submit" name="register" value="register"/>
         </form>
     </body>

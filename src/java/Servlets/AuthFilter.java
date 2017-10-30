@@ -29,10 +29,7 @@ public class AuthFilter implements Filter{
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         User user = (User) httpRequest.getSession().getAttribute("user");
-    //    User user = new User();
-     //   user.setUsername("Timur");
-     //   user.setPassword("12345");
-    //    user.setRole("ADMIN");
+   
         
         if((user != null) && (user.getRole().equals("ADMIN"))) {
         filterChain.doFilter(request, response);

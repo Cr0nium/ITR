@@ -60,7 +60,7 @@ ResultSet rs = null;
        } else if((login.equals(user.getUsername())) && (password.equals(user.getPassword()))) {
             super.forward("/main.jsp", request, response);
        } else {
-      // request.setAttribute("errorMessage", "Login or password is incorrect");
+       request.setAttribute("errorMessage", "Login or password is incorrect");
             super.forward("/index.jsp", request, response);
        }
         
