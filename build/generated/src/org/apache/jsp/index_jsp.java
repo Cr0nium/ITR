@@ -51,12 +51,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Авторизация</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <form action=\"\" method=\"post\">\n");
+      out.write("        <form action=\"LoginServlet\" method=\"post\">\n");
       out.write("            Login: <input type=\"text\" name = \"login\"/>\n");
       out.write("            Password: <input type=\"password\" name = \"password\"/>\n");
       out.write("            <input type=\"submit\" name=\"enter\" value=\"enter\"/>\n");
+      out.write("        </form>\n");
+      out.write("        <form action=\"register.jsp\" method=\"post\">\n");
       out.write("            <input type=\"submit\" name=\"register\" value=\"register\"/>\n");
       out.write("        </form>\n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        <div style=\"color: #FF0000;\">");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${errorMessage}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</div>\n");
+      out.write("        \n");
+      out.write("    \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

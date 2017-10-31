@@ -113,5 +113,6 @@
       <form action="LogoutServlet" method="get">
           <input type="submit" name="LogOut" value="logOut"/>
       </form>
+                <div style="color: #228B22;">${addComplit}${deleteComplit}</div>
     </body>
 </html>

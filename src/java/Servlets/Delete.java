@@ -42,7 +42,7 @@ public class Delete extends DispatcherServlets {
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setString(1,request.getParameter("id"));
             pst.executeUpdate();
-            
+            request.setAttribute("deleteComplit", "Запись успешно удалена");
             super.forward("/main.jsp", request, response);
             
         } catch (SQLException ex) {

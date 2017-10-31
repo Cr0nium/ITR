@@ -51,12 +51,13 @@ public class Add extends DispatcherServlets {
             pst.setString(5,request.getParameter("date"));
             pst.setString(6,request.getParameter("period"));
             pst.executeUpdate();
-            
+            request.setAttribute("addComplit", "Запись успешно добавлена");
             super.forward("/main.jsp", request, response);
             
         } catch (SQLException ex) {
             Logger.getLogger(Add.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         
     }           
     

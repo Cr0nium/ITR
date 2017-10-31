@@ -9,13 +9,31 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+       
         <title>Registration</title>
     </head>
     <body>
-        <form action="Register" method="post">
-            Login: <input type="text" name = "loginRegister"/><br>
-            Password: <input type="password" name = "passwordRegister"/><br>
-          <input type="submit" name="register" value="register"/>
-      </form>
+        <div class="container">
+            <h3 class="form-title">Заполните форму</h3>
+            <form action="Register" method="post" class="form" id="js-register-form">
+                
+                <div class="form-group">
+                    <input type="text" placeholder="Ваш логин" name="loginRegister" class="form-input">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Пароль" name="passwordRegister" id="form-pswd1" class="form-input">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Повторите пароль" name="passwordRegister2" class="form-input">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="form-btn" name="register" value="register">Отправить</button>
+                </div>  
+            </form>
+        </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="js/custom.js"></script>
     </body>
 </html>
