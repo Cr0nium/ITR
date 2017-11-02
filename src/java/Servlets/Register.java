@@ -2,7 +2,6 @@ package Servlets;
 
 import com.mysql.jdbc.PreparedStatement;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,7 +9,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,17 +25,15 @@ public class Register extends DispatcherServlets {
             throws ServletException, IOException {
        
     }
-
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-       response.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
         
         try {
-            
             con = DriverManager.getConnection("jdbc:mysql://localhost/itr","root","Nbveh13");
             queryInc = "SELECT userName FROM users "
                     + "WHERE userName = ?";
@@ -46,10 +42,9 @@ public class Register extends DispatcherServlets {
             rs = pst.executeQuery();
             int i=0;
             while (rs.next()){
-             i++;
+              i++;
             }
             if (i==0) {
-            
             String query = "INSERT INTO users "
               + "(userName, password, role)"            
               + " VALUES (?,?,'USER')";
@@ -58,10 +53,11 @@ public class Register extends DispatcherServlets {
             pst.setString(1,request.getParameter("loginRegister"));
             pst.setString(2,request.getParameter("passwordRegister"));
             pst.executeUpdate();
+            request.setAttribute("userAdd", "Пользователь успешно зарегистрирован");
             super.forward("/index.jsp", request, response);
             } else {
             request.setAttribute("userRepeats", "Данный пользователь уже существует");
-            super.forward("/index.jsp", request, response);
+            super.forward("/register.jsp", request, response);
             }
             
         } catch (SQLException ex) {

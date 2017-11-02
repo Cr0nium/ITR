@@ -1,39 +1,38 @@
-<%-- 
-    Document   : register
-    Created on : 30.10.2017, 13:22:03
-    Author     : timur
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/style.css">
-       
+        <link rel="stylesheet" href="css/styleRegister.css">
         <title>Registration</title>
     </head>
     <body>
+      <script src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+      <script src="js/customRegister.js"></script>
         <div class="container">
-            <h3 class="form-title">Заполните форму</h3>
-            <form action="Register" method="post" class="form" id="js-register-form">
-                
-                <div class="form-group">
-                    <input type="text" placeholder="Ваш логин" name="loginRegister" class="form-input">
+            <h3 class="formTitle"><a id="refresh" href="register.jsp">Заполните форму</a></h3>
+            <form action="Register" method="post" class="form" id="jsRegisterForm">
+                <div class="formGroup">
+                    <input type="text" placeholder="Ваш логин" name="loginRegister" 
+                           class="formInput">
                 </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Пароль" name="passwordRegister" id="form-pswd1" class="form-input">
+                <div class="formGroup">
+                    <input type="password" placeholder="Пароль" name="passwordRegister" 
+                           id="firstPassword" class="formInput">
                 </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Повторите пароль" name="passwordRegister2" class="form-input">
+                <div class="formGroup">
+                    <input type="password" placeholder="Повторите пароль" name="passwordRegisterRepeat" 
+                           class="formInput">
                 </div>
-                <div class="form-group">
-                    <button type="submit" class="form-btn" name="register" value="register">Отправить</button>
-                </div>  
+                <div class="formGroup">
+                    <button type="submit" class="buttonLogout" name="register" 
+                            value="register">Отправить</button>
+                </div>
             </form>
+                <div id="informationMessage" style="color: #FF0000;">
+                    ${userRepeats}
+                </div>
         </div>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="js/custom.js"></script>
     </body>
 </html>

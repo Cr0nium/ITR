@@ -1,4 +1,4 @@
-$(".form-btn1").click(function() {
+$("#buttonAdd").click(function() {
 
     $("#AddUpdateDeleteForm").validate({
 
@@ -53,7 +53,7 @@ $(".form-btn1").click(function() {
 
 });
 
-$(".form-btn2").click(function() {
+$("#buttonUpdate").click(function() {
 
     $("#AddUpdateDeleteForm").validate({
 
@@ -62,22 +62,22 @@ $(".form-btn2").click(function() {
                 required: true
             },
             devaice: {
-                required: true,
+                required: true
             },
             id: {
                 required: true
             },
             SN: {
-                required: true,
+                required: true
             },
             stats: {
-                required: true,
+                required: true
             },
             date: {
-                required: true,
+                required: true
             },
             period: {
-                required: true,
+                required: true
                 
             }
         },
@@ -86,22 +86,22 @@ $(".form-btn2").click(function() {
                 required: "Поле ФИО обязательное для заполнения"
             },
             devaice: {
-                required: "Поле Устройство обязательное для заполнения",
+                required: "Поле Устройство обязательное для заполнения"
             },
             id: {
-                required: "Поле Id обязательное для заполнения",
+                required: "Поле Id обязательное для заполнения"
             },
             SN: {
-                required: "Поле Серийный номер обязательное для заполнения",
+                required: "Поле Серийный номер обязательное для заполнения"
             },
             stats: {
-                required: "Поле Об устройстве обязательное для заполнения",
+                required: "Поле Об устройстве обязательное для заполнения"
             },
             date: {
-                required: "Поле Дата обязательное для заполнения",
+                required: "Поле Дата обязательное для заполнения"
             },
             period: {
-                required: "Поле На срок обязательное для заполнения",
+                required: "Поле На срок обязательное для заполнения"
             }
         },
         
@@ -113,18 +113,18 @@ $(".form-btn2").click(function() {
 
 });
 
-$(".form-btn3").click(function() {
+$("#buttonDelete").click(function() {
 
     $("#AddUpdateDeleteForm").validate({
 
         rules: {
             id: {
-                required: true,
+                required: true
             }
         },
         messages: {
             id: {
-                required: "Поле Id обязательное для заполнения",
+                required: "Поле Id обязательное для заполнения"
             }
         },
         

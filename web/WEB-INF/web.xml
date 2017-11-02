@@ -65,8 +65,8 @@
         <servlet-class>Servlets.Register</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AuthRegServlet</servlet-name>
-        <servlet-class>Servlets.AuthRegServlet</servlet-class>
+        <servlet-name>DispatcherLogin</servlet-name>
+        <servlet-class>Servlets.DispatcherLogin</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlets</servlet-name>
@@ -105,8 +105,8 @@
         <url-pattern>/Register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AuthRegServlet</servlet-name>
-        <url-pattern>/AuthRegServlet</url-pattern>
+        <servlet-name>DispatcherLogin</servlet-name>
+        <url-pattern>/DispatcherLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

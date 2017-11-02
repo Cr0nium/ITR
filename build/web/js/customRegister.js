@@ -1,6 +1,6 @@
 $(function() {
 
-    $("#js-register-form").validate({
+    $("#jsRegisterForm").validate({
 
         rules: {
             loginRegister: {
@@ -10,10 +10,10 @@ $(function() {
                 required: true,
                 minlength: 6
             },
-            passwordRegister2: {
+            passwordRegisterRepeat: {
                 required: true,
                 minlength: 6,
-                equalTo: "#form-pswd1"
+                equalTo: "#firstPassword"
             }
         },
         messages: {
@@ -24,8 +24,8 @@ $(function() {
                 required: "Поле Пароль обязательное для заполнения",
                 minlength: "Длинна пароля должна быть больше 6 символов"
             },
-            passwordRegister2: {
-                required: "Поле Пароль обязательное для заполнения",
+            passwordRegisterRepeat: {
+                required: "Поле Повторите пароль обязательное для заполнения",
                 minlength: "Длинна пароля должна быть больше 6 символов",
                 equalTo : "Повторите ранее введеный пароль"
             }

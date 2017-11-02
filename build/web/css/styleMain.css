@@ -7,76 +7,68 @@ body {
   box-sizing: border-box;
 }
 #refresh {
-    text-decoration: none; 
-    color: black;
-   } 
-
-   
-.containerMain {
-    
-}
+  text-decoration: none; 
+  color: black;
+} 
 .containerAddUpdateDelete {
-    
-    width: 600px;
-    border: 1px solid #ccc;
+  width: 600px;
+  border: 1px solid #ccc;
 }
 .containerSearch {
-    width: 600px;
-    border: 1px solid #ccc;
+  width: 600px;
+  border: 1px solid #ccc;
 }
 .containerTable {
-    position: absolute;
-    left: 600px;
-    top: 0px;
-    width: 853px;
-    height: 647px;
-    max-height: 647px;
-    border: 1px solid #ccc;
+  position: absolute;
+  left: 600px;
+  top: 0px;
+  width: 853px;
+  height: 647px;
+  max-height: 647px;
+  border: 1px solid #ccc;
 }
 #tableResult {
-    height: 614px;
-    width: 853px;
-    overflow: auto;
-    font-size: 14px;
-    word-wrap: break-word;
+  height: 614px;
+  width: 853px;
+  overflow: auto;
+  font-size: 14px;
+  word-wrap: break-word;
 }
-#tableColum {
-    max-width: 200px;
+#tableColumn {
+  max-width: 200px;
 }
 .AddUpdateDelete {
-    width: 200px;
-    position: relative;
-    left: 10%;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
+  width: 200px;
+  position: relative;
+  left: 10%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
 }
 .search {
-    width: 200px;
-    position: relative;
-    left: 10%;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
+  width: 200px;
+  position: relative;
+  left: 10%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
 }
 .logOutForm{
-    position: relative;
-    left: 572px;
+  position: relative;
+  left: 572px;
 }
 #lableStatus {
-    position: absolute;
-    top: 10px;
-    left: 15px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
 }
 #statusBar {
-    position: absolute;
-    left: 80px;
-    top: 7px;
-    font-size: 20px;
-    
-    
+  position: absolute;
+  left: 80px;
+  top: 7px;
+  font-size: 20px;
 }
-.btnSearch {
+.buttonSearch {
   width: 100%;
   display: inline;
   border: 0;
@@ -85,40 +77,35 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #fff;
-}
-.btnSearch:hover {
-  background-color: #008080;
   cursor: pointer;
 }
-#stats {
-    max-width: 200px;
-    max-height: 55px;
+.buttonSearch:hover {
+  background-color: #008080;
 }
-.containerIndex {
-  width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+#stats {
+  max-width: 200px;
+  max-height: 55px;
 }
 .form {
   width: 250px;
   margin: 0 auto;
 }
-.form-title {
+.formTitle {
   text-align: center;
 }
-.form-group {
+.formGroup {
   margin-bottom: 10px;
   position: relative;
 }
-.form-input,
-.form-textarea {
+.formInput,
+.formTextarea {
   width: 100%;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
 }
-.form-input:focus,
-.form-textarea:focus {
+.formInput:focus,
+.formTextarea:focus {
   outline: 0;
   border-color: #6ebbd8;
   box-shadow: 0 0 5px #6ebbd8;
@@ -145,11 +132,11 @@ label.error {
   z-index: 1;
   box-shadow: 0 0 0px #e85656;
 }
-.form-textarea {
+.formTextarea {
   font-family: Arial, sans-serif;
   resize: vertical;
 }
-.form-btn {
+.buttonLogout {
   width: 32.8%;
   display: inline;
   border: 0;
@@ -159,17 +146,15 @@ label.error {
   text-transform: uppercase;
   color: #fff;
 }
-.form-btn:hover {
+.buttonLogout:hover {
   background-color: #3385ff;
   cursor: pointer;
 }
-
-.btn-container {
-    display: flex;
-    justify-content: space-between;
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
 }
-
-.btn-container > button {
+.buttons {
   width: 200px;
   display: block;
   border: 0;
@@ -179,60 +164,25 @@ label.error {
   color: #fff;
   cursor: pointer;
 }
-
-.form-btn1 {
-  padding: 10px;
+#buttonAdd{
   background-color: #39be6c;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
 }
-.form-btn1:hover {
+#buttonAdd:hover {
   background-color: #33aa61;  
 }
-.form-btn2 {
+#buttonUpdate {
   background-color: #ffb84d;  
 }
-.form-btn2:hover {
+#buttonUpdate:hover {
   background-color: #ffa31a;
 }
-.form-btn3 {
+#buttonDelete {
   background-color: #ff8080;
 }
-.form-btn3:hover {
+#buttonDelete:hover {
   background-color: #ff4d4d;
 }
-
-.btn2 {
-  width: 49%;
-  display: inline;
-  border: 0;
-  padding: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #ffb84d;  
-}
-
-.btn2:hover {
-  background-color: #ffa31a;
-  cursor: pointer;
-}
-
 #incomingMessage {
-    text-align: left;
-    width: 120%;
-    
-}
-
-.message {
-  padding: 10px;
-  margin-bottom: 20px;
-  background-color: #efa0a0;
-  color: #cc5555;
-  text-align: center;
-  font-size: 14px;
-}
-.message:empty {
-  display: none;
+  text-align: left;
+  width: 120%;
 }
