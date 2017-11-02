@@ -49,7 +49,7 @@ public class Searche extends DispatcherServlets {
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setString(1,request.getParameter("devaiceSearche"));
             } 
-            else if(request.getParameter("devaiceSearche").equals("")) {
+            else if(request.getParameter("devaiceSearche").equals("Выберите устройство:")) {
             query = "SELECT fio, devaice, id, SN, stats, date, period FROM resurces "
                     + "WHERE fio = ?";
             pst = (PreparedStatement) con.prepareStatement(query);

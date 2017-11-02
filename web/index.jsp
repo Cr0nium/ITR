@@ -25,7 +25,10 @@
                     <button type="submit" class="form-btn" name="enter" value="enter">Ввойти</button>
                     <button type="submit"  class="btn2" name="register" value="register">Регистрация</button>
                 </div>
-                <div id="incomingMessage" style="color: #FF0000;">${errorMessage}</div>
+                <div id="incomingMessage" style="color: #FF0000;">
+                    ${errorMessage}
+                    ${userRepeats}
+                </div>
             </form>
             
             

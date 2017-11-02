@@ -56,6 +56,8 @@ public class Add extends DispatcherServlets {
             
         } catch (SQLException ex) {
             Logger.getLogger(Add.class.getName()).log(Level.SEVERE, null, ex);
+            request.setAttribute("addFail", "Возникла ошибка при добавлении записи");
+            super.forward("/main.jsp", request, response);
         }
         
         

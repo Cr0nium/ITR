@@ -7,112 +7,127 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/styleMain.css">
         <title>ITResurces</title>
     </head>
     <body>
-        <form action="StartServlet" method="post">
-          <table border="0">
-            <thead>
-                <tr>
-                    <th>ITResurces</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>ФИО:</td>
-                    <td><input type="text" name = "fio"/></td>
-                    <td>Об устройстве:</td>
-                    <td rowspan="2"><textarea name="stats" rows="4" cols="20">
-                        </textarea></td>
+                <div class="containerMain">
+                    <div class="containerAddUpdateDelete">
+                        <h3 class="form-title">Заполните информацию</h3>
+                        <form action="StartServlet" method="post" id="AddUpdateDeleteForm">
+                            <div class="form-group">
+                                <input type="text" placeholder="ФИО" name="fio" class="AddUpdateDelete">
+                            </div>
+                            
+                            <div class="form-group"> <select name="devaice" class="AddUpdateDelete">
+                            
+                            <option disabled selected value="Выберите устройство:">Выберите устройство:</option>
+                            <option>Ноутбук</option>
+                            <option>Монитор</option>
+                            <option>Компьютер</option>
+                            <option>Процессор</option>
+                            <option>Мат.Плата</option>
+                            <option>Оперативная память</option>
+                            <option>Жесткий диск</option>
+                            <option>Мышка</option>
+                            <option>Клавиатура</option>
+                            <option>Иное</option>
+                        </select></div>
+                            
+                            <div class="form-group">
+                                <input type="text" placeholder="Id" name="id" class="AddUpdateDelete">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" placeholder="Серийный номер" name="SN" class="AddUpdateDelete">
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea name="stats" rows="4" cols="20" placeholder="Об устройстве" class="AddUpdateDelete" id="stats"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="date" name = "date" class="AddUpdateDelete"/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" placeholder="На срок(дней)" name="period" class="AddUpdateDelete">
+                            </div>
+                            
+                            <div class="btn-container">
+                                <button type="submit" class="form-btn1" name="Add" value="add">Добавить</button>
+                                <button type="submit" class="form-btn2" name="Update" value="update">Изменить</button>
+                                <button type="submit" class="form-btn3" name="Delete" value="delete">Удалить</button>
+                            </div>
+                        </form>
+                    </div> 
+                    <div class="containerSearch">
+                        <h3 class="form-title">Введите данные для поиска</h3>
+                        <form action="Searche" method="post" class="formSearch">
+                            <div class="form-group">
+                                <input type="text" placeholder="ФИО" name="fioSearche" class="search">
+                            </div>
+                            <div class="form-group"> <select name="devaiceSearche" class="search">
+                            
+                            <option selected value="Выберите устройство:">Выберите устройство:</option>
+                            <option>Ноутбук</option>
+                            <option>Монитор</option>
+                            <option>Компьютер</option>
+                            <option>Процессор</option>
+                            <option>Мат.Плата</option>
+                            <option>Оперативная память</option>
+                            <option>Жесткий диск</option>
+                            <option>Мышка</option>
+                            <option>Клавиатура</option>
+                            <option>Иное</option>
+                        </select></div>
+                            <div>
+                                <button type="submit" class="btnSearch" name="Searche" value="searche">Поиск</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="containerTable">
+                        <div>
+                            <label id="lableStatus">Статус:</label> 
+                            <div style="color: #66a3ff;"id="statusBar">
+                                ${addComplit}
+                                ${deleteComplit}
+                                ${updateComplit}
+                                ${addFail}
+                                ${updateFail}
+                                ${deleteFail}
+                                ${accessDenied}
+                            </div>
+                            <form action="LogoutServlet" method="get" class="logOutForm">
+                            <button type="submit" class="form-btn" name="LogOut" value="logOut">Сменить пользователя</button>
+                            </form></div>
                         
-                </tr>
-                <tr>
-                    <td>Устройство:</td>
-                    <td><select name="devaice">
-                            <option>Ноутбук</option>
-                            <option>Монитор</option>
-                            <option>Компьютер</option>
-                            <option>Процессор</option>
-                            <option>Мат.Плата</option>
-                            <option>Оперативная память</option>
-                            <option>Жесткий диск</option>
-                            <option>Мышка</option>
-                            <option>Клавиатура</option>
-                            <option>Иное</option>
-                        </select></td>
-                    <td></td>
-                    <td></td>
-                    
-                </tr>
-                <tr>
-                    <td>Id:</td>
-                    <td><input type="text" name = "id"/></td>
-                    <td>Дата выдачи:</td>
-                    <td><input type="date" name = "date"/></td>
-                    
-                </tr>
-                <tr>
-                    <td>Серийный номер:</td>
-                    <td><input type="text" name = "SN"/></td>
-                    <td>На срок(дней):</td>
-                    <td><input type="text" name = "period"/></td>
-                    
-                </tr>
-                <tr>
-                    <td><input type="submit" name="Add" value="add"/></td>
-                    <td><input type="submit" name="Update" value="update"/></td>
-                    <td><input type="submit" name="Delete" value="delete"/></td>
-                    <td></td>
-                    
-                </tr>
-            </tbody>
-          </table>
-        </form>    
-            
-        <form action="Searche" method="post">
-            ФИО: <input type="text" name = "fioSearche"/><br/> 
-            Устройство: <select name="devaiceSearche">
-                            <option></option>
-                            <option>Ноутбук</option>
-                            <option>Монитор</option>
-                            <option>Компьютер</option>
-                            <option>Процессор</option>
-                            <option>Мат.Плата</option>
-                            <option>Оперативная память</option>
-                            <option>Жесткий диск</option>
-                            <option>Мышка</option>
-                            <option>Клавиатура</option>
-                            <option>Иное</option>
-                        </select><br/>
-            <input type="submit" name="Searche" value="searche"/>            
-        </form>
-        
-            <sql:query var="resurces" dataSource="jdbc/ITR">
-                SELECT * FROM resurces
-            </sql:query>
+                        <div id="tableResult">
+                        <sql:query var="resurces" dataSource="jdbc/ITR">
+                             SELECT * FROM resurces
+                        </sql:query>
                 
-            <table border="1">
-                <!-- column headers -->
-                <tr>
-                <c:forEach var="columnName" items="${resurces.columnNames}">
-                    <th><c:out value="${columnName}"/></th>
-                </c:forEach>
-                </tr>
-                <!-- column data -->
-                <c:forEach var="row" items="${resurces.rowsByIndex}">
-                    <tr>
-                    <c:forEach var="column" items="${row}">
+                        <table border="1" >
+                         <!-- column headers -->
+                        <tr>
+                        <c:forEach var="columnName" items="${resurces.columnNames}">
+                        <th><c:out value="${columnName}"/></th>
+                        </c:forEach>
+                        </tr>
+                        <!-- column data -->
+                        <c:forEach var="row" items="${resurces.rowsByIndex}">
+                         <tr>
+                        <c:forEach var="column" items="${row}">
                         <td><c:out value="${column}"/></td>
-                    </c:forEach>
-                    </tr>
-                </c:forEach>
-            </table>
-      <form action="LogoutServlet" method="get">
-          <input type="submit" name="LogOut" value="logOut"/>
-      </form>
-                <div style="color: #228B22;">${addComplit}${deleteComplit}</div>
+                        </c:forEach>
+                        </tr>
+                         </c:forEach>
+                        </table>
+                       </div>
+                    </div>
+                </div>            
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="js/customMainForm.js"></script>          
     </body>
 </html>

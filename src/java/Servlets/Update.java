@@ -51,11 +51,13 @@ public class Update extends DispatcherServlets {
             pst.setString(6,request.getParameter("period"));
             pst.setString(7,request.getParameter("id"));
             pst.executeUpdate();
-            
+            request.setAttribute("updateComplit", "Запись успешно изменена");
             super.forward("/main.jsp", request, response);
             
         } catch (SQLException ex) {
             Logger.getLogger(Add.class.getName()).log(Level.SEVERE, null, ex);
+            request.setAttribute("updateFail", "Возникла ошибка при изменении записи");
+            super.forward("/main.jsp", request, response);
         }
     }
 }

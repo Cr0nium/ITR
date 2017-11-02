@@ -47,6 +47,8 @@ public class Delete extends DispatcherServlets {
             
         } catch (SQLException ex) {
             Logger.getLogger(Add.class.getName()).log(Level.SEVERE, null, ex);
+            request.setAttribute("deleteFail", "Возникла ошибка при удалении записи");
+            super.forward("/main.jsp", request, response);
         }
     }
        
