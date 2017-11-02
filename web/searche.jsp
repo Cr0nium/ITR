@@ -37,7 +37,7 @@
                 </tr>
                 <%}%>
             </tbody>
-        </table>           
-       
+        </table><br>          
+            <a href="main.jsp">На главную страницу</a>
     </body>
 </html>

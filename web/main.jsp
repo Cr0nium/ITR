@@ -13,7 +13,7 @@
     <body>
                 <div class="containerMain">
                     <div class="containerAddUpdateDelete">
-                        <h3 class="form-title">Заполните информацию</h3>
+                        <h3 class="form-title"> <a id="refresh" href="main.jsp">Заполните информацию</a></h3>
                         <form action="StartServlet" method="post" id="AddUpdateDeleteForm">
                             <div class="form-group">
                                 <input type="text" placeholder="ФИО" name="fio" class="AddUpdateDelete">
@@ -107,18 +107,22 @@
                              SELECT * FROM resurces
                         </sql:query>
                 
-                        <table border="1" >
+                        <table border="1">
                          <!-- column headers -->
                         <tr>
-                        <c:forEach var="columnName" items="${resurces.columnNames}">
-                        <th><c:out value="${columnName}"/></th>
-                        </c:forEach>
+                        <th>ФИО</th>
+                        <th>Устройство</th>
+                        <th>id</th>
+                        <th>Серийный номер</th>
+                        <th>Об устройстве</th>
+                        <th>Дата выдачи</th>
+                        <th>На срок</th>
                         </tr>
                         <!-- column data -->
                         <c:forEach var="row" items="${resurces.rowsByIndex}">
                          <tr>
                         <c:forEach var="column" items="${row}">
-                        <td><c:out value="${column}"/></td>
+                            <td id="tableColum"><c:out value="${column}"/></td>
                         </c:forEach>
                         </tr>
                          </c:forEach>

@@ -6,6 +6,12 @@ body {
 * {
   box-sizing: border-box;
 }
+#refresh {
+    text-decoration: none; 
+    color: black;
+   } 
+
+   
 .containerMain {
     
 }
@@ -22,16 +28,20 @@ body {
     position: absolute;
     left: 600px;
     top: 0px;
-    width: 760px;
+    width: 853px;
     height: 647px;
     max-height: 647px;
     border: 1px solid #ccc;
 }
 #tableResult {
     height: 614px;
-    width: 760px;
+    width: 853px;
     overflow: auto;
-    font-size: 15px;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+#tableColum {
+    max-width: 200px;
 }
 .AddUpdateDelete {
     width: 200px;
@@ -51,7 +61,7 @@ body {
 }
 .logOutForm{
     position: relative;
-    left: 509px;
+    left: 572px;
 }
 #lableStatus {
     position: absolute;
