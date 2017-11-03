@@ -1,9 +1,8 @@
 package Servlets;
 
+import ru.zalimov.Item;
 import com.mysql.jdbc.PreparedStatement;
 import java.io.IOException;
-import java.io.PrintWriter;
-import static java.lang.System.out;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -24,13 +22,12 @@ public class Searche extends DispatcherServlets {
     ResultSet rs = null;  
     String query;
 
-
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
     }
-
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -42,7 +39,6 @@ public class Searche extends DispatcherServlets {
         try {
          
             con = DriverManager.getConnection("jdbc:mysql://localhost/itr","root","Nbveh13");
-            
             if(request.getParameter("fioSearche").equals("")) {
             query = "SELECT fio, devaice, id, SN, stats, date, period FROM resurces "
                     + "WHERE devaice = ?";
@@ -76,13 +72,11 @@ public class Searche extends DispatcherServlets {
                item.setPeriod(rs.getInt("period"));
                itemList.add(item);
             }
-            
             request.setAttribute("itemlist", itemList);          
             
         } catch (SQLException ex) {
             Logger.getLogger(Add.class.getName()).log(Level.SEVERE, null, ex);
         } 
-    
     super.forward("/searche.jsp", request, response);
     }
 

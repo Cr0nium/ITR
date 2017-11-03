@@ -1,4 +1,3 @@
-
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.Array"%>
@@ -10,7 +9,6 @@
         <title>Searcge</title>
     </head>
     <body>
-        
         <table border="1">
             <thead>
                 <tr>
@@ -38,6 +36,6 @@
                 <%}%>
             </tbody>
         </table><br>          
-            <a href="main.jsp">На главную страницу</a>
+        <a href="main.jsp">На главную страницу</a>
     </body>
 </html>

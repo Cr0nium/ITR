@@ -1,10 +1,17 @@
-package Servlets;
-
-import java.util.Date;
+package ru.zalimov;
 
 
 public class Item {
 
+    private String fio;
+    private String devaice;
+    private int id;
+    private String SN;
+    private String stats;
+    private String date;
+    private int period;
+    
+    
     public String getFio() {
         return fio;
     }
@@ -60,13 +67,4 @@ public class Item {
     public void setPeriod(int period) {
         this.period = period;
     }
-    
-    private String fio;
-    private String devaice;
-    private int id;
-    private String SN;
-    private String stats;
-    private String date;
-    private int period;
-    
 }

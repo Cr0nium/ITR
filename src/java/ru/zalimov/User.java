@@ -1,5 +1,4 @@
-
-package Servlets;
+package ru.zalimov;
 
 
 public class User {

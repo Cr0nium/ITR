@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <filter>
-        <filter-name>AuthFilter</filter-name>
-        <filter-class>Servlets.AuthFilter</filter-class>
+        <filter-name>AuthorizationFilter</filter-name>
+        <filter-class>Servlets.AuthorizationFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>AuthFilter</filter-name>
+        <filter-name>AuthorizationFilter</filter-name>
         <url-pattern>/main.jsp</url-pattern>
     </filter-mapping>
     <filter-mapping>
-        <filter-name>AuthFilter</filter-name>
+        <filter-name>AuthorizationFilter</filter-name>
         <url-pattern>/Searche</url-pattern>
     </filter-mapping>
     <filter-mapping>
-        <filter-name>AuthFilter</filter-name>
-        <url-pattern>/StartServlet</url-pattern>
+        <filter-name>AuthorizationFilter</filter-name>
+        <url-pattern>/DispatcherMain</url-pattern>
     </filter-mapping>
     <filter-mapping>
-        <filter-name>AuthFilter</filter-name>
+        <filter-name>AuthorizationFilter</filter-name>
         <url-pattern>/Add</url-pattern>
     </filter-mapping>
     <filter-mapping>
-        <filter-name>AuthFilter</filter-name>
+        <filter-name>AuthorizationFilter</filter-name>
         <url-pattern>/Update</url-pattern>
     </filter-mapping>
     <filter-mapping>
-        <filter-name>AuthFilter</filter-name>
+        <filter-name>AuthorizationFilter</filter-name>
         <url-pattern>/Delete</url-pattern>
     </filter-mapping>
     <servlet>
@@ -33,8 +33,8 @@
         <servlet-class>Servlets.DispatcherServlets</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>StartServlet</servlet-name>
-        <servlet-class>Servlets.StartServlet</servlet-class>
+        <servlet-name>DispatcherMain</servlet-name>
+        <servlet-class>Servlets.DispatcherMain</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Add</servlet-name>
@@ -73,8 +73,8 @@
         <url-pattern>/DispatcherServlets</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>StartServlet</servlet-name>
-        <url-pattern>/StartServlet</url-pattern>
+        <servlet-name>DispatcherMain</servlet-name>
+        <url-pattern>/DispatcherMain</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Add</servlet-name>

@@ -1,0 +1,18 @@
+CREATE TABLE resources
+(
+fio varchar(40),
+
+device enum('Ноутбук','Монитор','Компьютер','Процессор','Мат.Плата','Оперативная память','Жесткий диск','Мышка','Клавиатура','Иное'),
+
+id smallint unsigned AUTO_INCREMENT,
+
+SN varchar(30),
+
+stats varchar(100),
+
+date date,
+
+period smallint,
+
+constraint pk_resources PRIMARY KEY (id)
+);

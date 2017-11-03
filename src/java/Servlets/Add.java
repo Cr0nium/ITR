@@ -2,21 +2,15 @@ package Servlets;
 
 import com.mysql.jdbc.PreparedStatement;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 
 public class Add extends DispatcherServlets {  
@@ -36,9 +30,8 @@ public class Add extends DispatcherServlets {
             throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
-                        
         try {
-         
+            
             String query = "INSERT INTO resurces "
               + "(fio, devaice, SN, stats, date, period)"            
               + " VALUES (?,?,?,?,?,?)";
@@ -59,12 +52,5 @@ public class Add extends DispatcherServlets {
             request.setAttribute("addFail", "Возникла ошибка при добавлении записи");
             super.forward("/main.jsp", request, response);
         }
-        
-        
     }           
-    
-      
-    
-    
-
 }

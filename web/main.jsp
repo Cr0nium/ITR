@@ -12,7 +12,7 @@
         <div class="containerMain">
             <div class="containerAddUpdateDelete">
                 <h3 class="formTitle"> <a id="refresh" href="main.jsp">Заполните информацию</a></h3>
-                    <form action="StartServlet" method="post" id="AddUpdateDeleteForm">
+                    <form action="DispatcherMain" method="post" id="jsAddUpdateDeleteForm">
                         <div class="formGroup">
                             <input type="text" placeholder="ФИО" name="fio" class="AddUpdateDelete">
                         </div>
@@ -47,7 +47,7 @@
                                 <input type="date" name = "date" class="AddUpdateDelete"/>
                             </div>
                             <div class="formGroup">
-                                <input type="text" placeholder="На срок(дней)" name="period" 
+                                <input type="text" placeholder="На срок (дней)" name="period" 
                                     class="AddUpdateDelete">
                             </div>
                             <div class="buttonsContainer">
@@ -97,7 +97,6 @@
                         ${addFail}
                         ${updateFail}
                         ${deleteFail}
-                        ${accessDenied}
                     </div>
                     <form action="LogoutServlet" method="get" class="logOutForm">
                         <button type="submit" class="buttonLogout" name="LogOut" 

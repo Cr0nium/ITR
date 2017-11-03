@@ -1,6 +1,6 @@
 $("#buttonAdd").click(function() {
 
-    $("#AddUpdateDeleteForm").validate({
+    $("#jsAddUpdateDeleteForm").validate({
 
         rules: {
             fio: {
@@ -44,18 +44,15 @@ $("#buttonAdd").click(function() {
                 digits: "Введите число"
             }
         },
-        
         focusCleanup: true,
         focusInvalid: false
-
-        
     });
 
 });
 
 $("#buttonUpdate").click(function() {
 
-    $("#AddUpdateDeleteForm").validate({
+    $("#jsAddUpdateDeleteForm").validate({
 
         rules: {
             fio: {
@@ -104,18 +101,15 @@ $("#buttonUpdate").click(function() {
                 required: "Поле На срок обязательное для заполнения"
             }
         },
-        
         focusCleanup: true,
         focusInvalid: false
-
-        
     });
 
 });
 
 $("#buttonDelete").click(function() {
 
-    $("#AddUpdateDeleteForm").validate({
+    $("#jsAddUpdateDeleteForm").validate({
 
         rules: {
             id: {
@@ -127,11 +121,8 @@ $("#buttonDelete").click(function() {
                 required: "Поле Id обязательное для заполнения"
             }
         },
-        
         focusCleanup: true,
         focusInvalid: false
-
-        
     });
 
 });
