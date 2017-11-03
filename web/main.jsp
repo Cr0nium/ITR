@@ -17,7 +17,7 @@
                             <input type="text" placeholder="ФИО" name="fio" class="AddUpdateDelete">
                         </div>
                         <div class="formGroup"> 
-                            <select name="devaice" class="AddUpdateDelete">
+                            <select name="device" class="AddUpdateDelete">
                                 <option disabled selected 
                                     value="Выберите устройство:">Выберите устройство:</option>
                                 <option>Ноутбук</option>
@@ -62,12 +62,12 @@
             </div> 
             <div class="containerSearch">
                 <h3 class="formTitle">Введите данные для поиска</h3>
-                    <form action="Searche" method="post" class="formSearch">
+                    <form action="Search" method="get" class="formSearch">
                         <div class="formGroup">
-                            <input type="text" placeholder="ФИО" name="fioSearche" class="search">
+                            <input type="text" placeholder="ФИО" name="fioSearch" class="search">
                         </div>
                         <div class="formGroup"> 
-                            <select name="devaiceSearche" class="search">
+                            <select name="deviceSearch" class="search">
                                 <option selected value="Выберите устройство:">Выберите устройство:</option>
                                 <option>Ноутбук</option>
                                 <option>Монитор</option>
@@ -83,7 +83,7 @@
                         </div>
                         <div>
                             <button type="submit" class="buttonSearch" 
-                                name="Searche" value="searche">Поиск</button>
+                                name="Search" value="search">Поиск</button>
                         </div>
                     </form>
             </div>
@@ -104,8 +104,8 @@
                     </form>
                 </div>
                 <div id="tableResult">
-                    <sql:query var="resurces" dataSource="jdbc/ITR">
-                         SELECT * FROM resurces
+                    <sql:query var="resources" dataSource="jdbc/ITR">
+                         SELECT * FROM resources
                     </sql:query>
                     <table border="1">
                         <tr>
@@ -117,7 +117,7 @@
                             <th>Дата выдачи</th>
                             <th>На срок</th>
                         </tr>
-                        <c:forEach var="row" items="${resurces.rowsByIndex}">
+                        <c:forEach var="row" items="${resources.rowsByIndex}">
                             <tr>
                                 <c:forEach var="column" items="${row}">
                                     <td id="tableColumn"><c:out value="${column}"/></td>

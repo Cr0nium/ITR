@@ -33,11 +33,11 @@ public class Update extends DispatcherServlets {
         request.setCharacterEncoding("UTF-8");
         try {
          
-            String query = "UPDATE resurces SET fio=?, devaice=?, SN=?, stats=?, date=?, period=? WHERE id=?";
+            String query = "UPDATE resources SET fio=?, device=?, SN=?, stats=?, date=?, period=? WHERE id=?";
             con = DriverManager.getConnection("jdbc:mysql://localhost/itr","root","Nbveh13");
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setString(1,request.getParameter("fio"));
-            pst.setString(2,request.getParameter("devaice"));
+            pst.setString(2,request.getParameter("device"));
             pst.setString(3,request.getParameter("SN"));
             pst.setString(4,request.getParameter("stats"));
             pst.setString(5,request.getParameter("date"));

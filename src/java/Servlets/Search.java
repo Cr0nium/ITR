@@ -15,7 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Searche extends DispatcherServlets {
+public class Search extends DispatcherServlets {
 
     Connection con = null;
     PreparedStatement pst = null;
@@ -27,36 +27,30 @@ public class Searche extends DispatcherServlets {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-    }
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
                         
         try {
          
             con = DriverManager.getConnection("jdbc:mysql://localhost/itr","root","Nbveh13");
-            if(request.getParameter("fioSearche").equals("")) {
-            query = "SELECT fio, devaice, id, SN, stats, date, period FROM resurces "
-                    + "WHERE devaice = ?";
+            if(request.getParameter("fioSearch").equals("")) {
+            query = "SELECT fio, device, id, SN, stats, date, period FROM resources "
+                    + "WHERE device = ?";
             pst = (PreparedStatement) con.prepareStatement(query);
-            pst.setString(1,request.getParameter("devaiceSearche"));
+            pst.setString(1,request.getParameter("deviceSearch"));
             } 
-            else if(request.getParameter("devaiceSearche").equals("Выберите устройство:")) {
-            query = "SELECT fio, devaice, id, SN, stats, date, period FROM resurces "
+            else if(request.getParameter("deviceSearch").equals("Выберите устройство:")) {
+            query = "SELECT fio, device, id, SN, stats, date, period FROM resources "
                     + "WHERE fio = ?";
             pst = (PreparedStatement) con.prepareStatement(query);
-            pst.setString(1,request.getParameter("fioSearche"));
+            pst.setString(1,request.getParameter("fioSearch"));
             }       
-            else if((request.getParameter("devaiceSearche")!=null) && (!request.getParameter("fioSearche").equals(""))) {
-            query = "SELECT fio, devaice, id, SN, stats, date, period FROM resurces "
-                    + "WHERE fio = ? AND devaice = ?";
+            else if((request.getParameter("deviceSearch")!=null) && (!request.getParameter("fioSearch").equals(""))) {
+            query = "SELECT fio, device, id, SN, stats, date, period FROM resources "
+                    + "WHERE fio = ? AND device = ?";
             pst = (PreparedStatement) con.prepareStatement(query);        
-            pst.setString(1,request.getParameter("fioSearche"));
-            pst.setString(2,request.getParameter("devaiceSearche"));
+            pst.setString(1,request.getParameter("fioSearch"));
+            pst.setString(2,request.getParameter("deviceSearch"));
             }
             rs = pst.executeQuery();
             
@@ -64,7 +58,7 @@ public class Searche extends DispatcherServlets {
             while(rs.next()) {
             Item item = new Item();
                item.setFio(rs.getString("fio"));
-               item.setDevaice(rs.getString("devaice"));
+               item.setDevice(rs.getString("device"));
                item.setId(rs.getInt("id"));
                item.setSN(rs.getString("SN"));
                item.setStats(rs.getString("stats"));
@@ -77,7 +71,14 @@ public class Searche extends DispatcherServlets {
         } catch (SQLException ex) {
             Logger.getLogger(Add.class.getName()).log(Level.SEVERE, null, ex);
         } 
-    super.forward("/searche.jsp", request, response);
+    super.forward("/search.jsp", request, response);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        
     }
 
    

@@ -32,7 +32,7 @@ public class Delete extends DispatcherServlets {
         request.setCharacterEncoding("UTF-8");
         try {
             
-            String query = "DELETE FROM resurces WHERE id = ?";
+            String query = "DELETE FROM resources WHERE id = ?";
             con = DriverManager.getConnection("jdbc:mysql://localhost/itr","root","Nbveh13");
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setString(1,request.getParameter("id"));

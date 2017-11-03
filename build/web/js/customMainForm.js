@@ -6,7 +6,7 @@ $("#buttonAdd").click(function() {
             fio: {
                 required: true
             },
-            devaice: {
+            device: {
                 required: true
             },
             SN: {
@@ -27,7 +27,7 @@ $("#buttonAdd").click(function() {
             fio: {
                 required: "Поле ФИО обязательное для заполнения"
             },
-            devaice: {
+            device: {
                 required: "Поле Устройство обязательное для заполнения"
             },
             SN: {
@@ -58,7 +58,7 @@ $("#buttonUpdate").click(function() {
             fio: {
                 required: true
             },
-            devaice: {
+            device: {
                 required: true
             },
             id: {
@@ -82,7 +82,7 @@ $("#buttonUpdate").click(function() {
             fio: {
                 required: "Поле ФИО обязательное для заполнения"
             },
-            devaice: {
+            device: {
                 required: "Поле Устройство обязательное для заполнения"
             },
             id: {

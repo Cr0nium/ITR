@@ -4,7 +4,7 @@ package ru.zalimov;
 public class Item {
 
     private String fio;
-    private String devaice;
+    private String device;
     private int id;
     private String SN;
     private String stats;
@@ -16,8 +16,8 @@ public class Item {
         return fio;
     }
 
-    public String getDevaice() {
-        return devaice;
+    public String getDevice() {
+        return device;
     }
 
     public int getId() {
@@ -44,8 +44,8 @@ public class Item {
         this.fio = fio;
     }
 
-    public void setDevaice(String devaice) {
-        this.devaice = devaice;
+    public void setDevice(String device) {
+        this.device = device;
     }
 
     public void setId(int id) {

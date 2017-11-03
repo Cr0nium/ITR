@@ -28,7 +28,7 @@ public class AuthorizationFilter implements Filter{
         if((user != null) && (user.getRole().equals("ADMIN"))) {
         filterChain.doFilter(request, response);
         } else {
-        httpResponse.sendRedirect("accesDenied.jsp");
+        httpResponse.sendRedirect("accessDenied.jsp");
         }
       }
 

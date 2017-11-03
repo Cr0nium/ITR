@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" 
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                       xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+                                           http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <filter>
         <filter-name>AuthorizationFilter</filter-name>
         <filter-class>Servlets.AuthorizationFilter</filter-class>
@@ -10,7 +13,7 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>AuthorizationFilter</filter-name>
-        <url-pattern>/Searche</url-pattern>
+        <url-pattern>/Search</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>AuthorizationFilter</filter-name>
@@ -49,8 +52,8 @@
         <servlet-class>Servlets.Update</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Searche</servlet-name>
-        <servlet-class>Servlets.Searche</servlet-class>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>Servlets.Search</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
@@ -89,8 +92,8 @@
         <url-pattern>/Update</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Searche</servlet-name>
-        <url-pattern>/Searche</url-pattern>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/Search</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>

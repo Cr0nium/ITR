@@ -1,7 +1,7 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.Array"%>
-<%@page contentType="text/html" pageEncoding="UTF-8" import="Servlets.Item"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="ru.zalimov.Item"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +26,7 @@
                     for(Item item:itemList) {%>
                 <tr>
                     <td><%out.println(item.getFio());%></td>
-                    <td><%out.println(item.getDevaice());%></td>
+                    <td><%out.println(item.getDevice());%></td>
                     <td><%out.println(item.getId());%></td>
                     <td><%out.println(item.getSN());%></td>
                     <td><%out.println(item.getStats());%></td>
